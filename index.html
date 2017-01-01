@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>MyMedico</title>
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <div class="grid">
+          <h1>&#43;MyMedico&#43;</h1>
+        </div>
+        <div class="grid">
+          <ul>
+            <li><a href="#" class="header-links">How We Work</a></li>
+            <li><a href="#" class="header-links">Category Doctor's</a>
+            <li><a href="#" class="header-links">Specialists</a></li>
+            <li><a href="#" class="header-links">Jobs</a></li>
+            <li class="login-menu"><a href="#" class="btn">Log In</a>
+              <ul class="login-opener">
+                <li><a href="#">As A Patient</a></li>
+                <li><a href="#">As A Doctor</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="btn">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <header class="header-front-face">
+        <div class="grid">
+          <h1>&#43;MyMedico&#43;</h1>
+        </div>
+        <div id="barsWrapper">
+          <div id="barsContainer">
+            <div id="bc-first" class="animate"></div>
+            <div id="bc-second" class="animate"></div>
+            <div id="bc-third" class="animate"></div>
+          </div>
+        </div>
+        <aside id="mainAside" class="animate aside-bar">
+          <ul id="menu-list">
+            <li><a href="#">How We Work</a></li>
+            <li><a href="#">Category Doctor's</a></li>
+            <li><a href="#">Specialists</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </aside>
+      </header>
+    <!--script of aside menu-->
+    <script>
+      var aside = document.getElementById('mainAside');
+      var asideOn = false
+      
+      document.getElementById('barsWrapper').addEventListener('click', function(){
+          if(asideOn){
+            aside.style.right = '-100%';
+            
+            asideOn = false;
+          }else{
+            aside.style.right = '0';
+            
+            asideOn = true;
+          }
+      });
+    </script>
+  <!--end of aside menu script-->
+    
+  <!--script for menu button-->
+    <script>
+      
+      function _(e){
+        return document.getElementById(e);
+      }
+      
+      var FirstBar = _('bc-first');
+      var SecondBar = _('bc-second');
+      var ThirdBar = _('bc-third');
+      var btn = _('barsWrapper');
+      var menuOn = false;
+
+      btn.addEventListener('click',function(){
+        
+        if(menuOn){
+          FirstBar.style.transform = 'rotate(0deg)';
+          FirstBar.style.top = '0px';
+          SecondBar.style.opacity= 1;
+          ThirdBar.style.transform = 'rotate(0deg)';
+          ThirdBar.style.bottom = '0px';
+          
+          menuOn = false;
+        }else{
+          FirstBar.style.transform = 'rotate(45deg)';
+          FirstBar.style.top = '8px';
+          SecondBar.style.opacity= 0;
+          ThirdBar.style.transform = 'rotate(-45deg)';
+          ThirdBar.style.bottom = '8px';
+          
+          menuOn = true;
+        }
+      });
+    </script>
+  <!--end of menu button script-->
+    <section class="hero-section background-img">
+      <h1>Our Happiness Is In Your Wellness<br>Stay Happy And Disease-Free With <br> <span>MyMedico</span></h1>
+    </section>
+  </body>
+</html>
